@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="../public/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--########################### NAVBAR ################################-->
+    <!--########################### NAVBAR ################################-->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+
+            <h1>BASS</h1>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active " aria-current="page" href="../views/home.html">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active " aria-current="page" href="/">COMPLAINT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active " href="../views/nodal.html">NODAL</a>
+                    </li> 
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link active dropdown-toggle " href="/login" id="navbarDropdownMenuLink"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            LOGIN
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item " href="../views/penciladminui.html">PENCIL ADMIN</a></li>
+                            <li><a class="dropdown-item " href="../views/nodalui.html">NODAL</a></li>
+                            <li><a class="dropdown-item " href="../views/aadharui.html">E-AADHAR</a></li>
+                            <li><a class="dropdown-item " href="../views/bankui.html">BANK</a></li>
+                            <li><a class="dropdown-item " href="../views/educationui.html">EDUCATION</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active " aria-current="page" href="../views/nclbreg.html">SSA</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active " aria-current="page" href="../views/aboutus.html">ABOUT US</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active " aria-current="page" href="../views/donate.html">DONATE</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active " aria-current="page" href="../views/student.html">STUDENT</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+
+    <div class="jumbotron">
+        <h1 class="display-4">WELCOME TO BASS</h1>
+        <p class="lead">This is a complaint website .which recevice your complaint and take step to clear it with
+            two weeks </p>
+        <hr class="my-4">
+        <p>Use this website to clear your problems around you </p>
+
+    </div> 
+
+
+    <!-- ################################ REGISTER FORM ##################################-->
+    <div style="text-align: center;display:center;" id="aadhar_form" class="container mt-4 ">
+        <div class="col-md-8 offset-md-2 form">
+            <div class="card-header"> <b>PROOF UPLOAD</b></div>
+            <div class="card-body">
+                
+                <form class="row g-3" action="/upload" enctype="multipart/form-data" method="POST">
+                    <div class="col-md-12">
+                        <label for="comp_id">comp_id</label>
+                        <input type="text" class="form-control" id="comp_id" name="comp_id">
+
+                    </div>
+                    <div class="col-md-12">
+                        <input type="file" name="image">
+                    </div>
+                    <div class="col-md-5"></div>
+                    <div class="col-md-6">
+                        <button type="submit" class="btn btn-primary">SUBMIT</button>
+                    </div>
+                </form> 
+                <form action="/upload" enctype="multipart/form-data" method="post">
+                    <p>YOU MUST NEED TO UPLOAD EXACTLY FIVE PROOF AS PNG,JPEG,JPG</p>
+                    <div hidden="hidden" class="col-md-12">
+                        <label for="comp_id">comp_id</label>
+                        <input type="text" class="form-control" id="comp_id" name="comp_id">
+
+                    </div>
+                    <input type="file" name="multi-files" accept='image/*' multiple>
+                    <input type="submit" value="Upload">
+                </form>
+            </div>
+
+
+        </div>
+    </div>
+
+    </div>
+
+
+
+    <script>
+
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const comp_id = urlParams.get('comp_id')
+        console.log(comp_id);
+        document.getElementById('comp_id').value = comp_id;
+
+    </script>
+
+
+
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

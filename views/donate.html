@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="../public/style.css">
+  <title>Document</title>
+  <style>
+    /* .navbar {
+      background-color:rgb(119,13,119);
+      color: #fff;
+      padding: 30px;
+
+    }
+
+    .navbar-nav {
+
+      font-size: large;
+
+    }
+
+    .form {
+      border: 1px solid #ccc;
+
+    }
+
+    hr.new {
+      border: 1px solid black;
+
+    } */
+
+    body {
+      font-family: "Lato", sans-serif;
+    }
+
+    .sidenav {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color:rgb(119,13,119,);
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 60px;
+    }
+
+    .sidenav a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 25px;
+      color: white;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .sidenav a:hover {
+      color: #f1f1f1;
+    }
+
+    .sidenav .closebtn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+    }
+
+    @media screen and (max-height: 450px) {
+      .sidenav {
+        padding-top: 15px;
+      }
+
+      .sidenav a {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!--########################### NAVBAR ################################-->
+  <!--########################### NAVBAR ################################-->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+
+      <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#section1">About</a>
+        <a href="#section2">Services</a>
+        <a href="#section3">Clients</a>
+        <a href="#section4">Contact</a>
+      </div>
+
+
+      <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
+
+      <!-- <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container"> -->
+
+          <h1>BASS</h1>
+          <p class="lead"><sub>Let the child earn KNOWLEDGE not MONEY</sub></p>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ms-auto">
+                  <li class="nav-item">
+                      <a class="nav-link active " aria-current="page" href="../views/home.html">HOME</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link active " aria-current="page" href="../views/index.html">COMPLAINT</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link active " href="../views/nodalreg.html">NODAL</a>
+                  </li> 
+
+                  <li class="nav-item dropdown">
+                      <a class="nav-link active dropdown-toggle " href="/login" id="navbarDropdownMenuLink"
+                          role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          LOGIN
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                          <li><a class="dropdown-item " href="../views/penciladminui.html">ADMIN</a></li>
+                          <li><a class="dropdown-item " href="/">DONATE</a></li>
+                          <!-- <li><a class="dropdown-item " href="../views/aadharui.html">E-AADHAR</a></li>
+                          <li><a class="dropdown-item " href="../views/bankui.html">BANK</a></li> -->
+                          <!-- <li><a class="dropdown-item " href="../views/educationui.html">EDUCATION</a></li> -->
+                      </ul>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link active " aria-current="page" href="../views/nclbreg.html">SSA</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link active " aria-current="page" href="../views/aboutus.html">SCHEME</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link active " aria-current="page" href="../views/donate.html">ABOUT US</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link active " aria-current="page" href="../views/student.html">FEEDBACK</a>
+                  </li>
+
+                </ul>
+      </div>
+    </div>
+  </nav>
+  <style>
+    body {
+      font-family: Arial;
+      margin: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    img {
+      vertical-align: middle;
+    }
+
+    /* Position the image container (needed to position the left and right arrows) */
+    .container {
+      position: relative;
+    }
+
+    /* Hide the images by default */
+    .mySlides {
+      display: none;
+    }
+
+    /* Add a pointer when hovering over the thumbnail images */
+    .cursor {
+      cursor: pointer;
+    }
+
+    /* Next & previous buttons */
+    .prev,
+    .next {
+      cursor: pointer;
+      position: absolute;
+      top: 40%;
+      width: auto;
+      padding: 16px;
+      margin-top: -50px;
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover,
+    .next:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    /* Number text (1/3 etc) */
+    .numbertext {
+      color: #f2f2f2;
+      font-size: 12px;
+      padding: 8px 12px;
+      position: absolute;
+      top: 0;
+    }
+
+    /* Container for image text */
+    .caption-container {
+      text-align: center;
+      background-color: #222;
+      padding: 2px 16px;
+      color: white;
+    }
+
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    /* Six columns side by side */
+    .column {
+      float: left;
+      width: 16.66%;
+    }
+
+    /* Add a transparency effect for thumnbail images */
+    .demo {
+      opacity: 0.6;
+    }
+
+    .active,
+    .demo:hover {
+      opacity: 1;
+    }
+  </style>
+
+  <body>
+
+    <h2 style="text-align:center"></h2>
+
+    <div class="container">
+      <div class="mySlides">
+        <div class="numbertext">1 / 4</div>
+        <img src="../views/donate01.jpg" style="width:100%" height="500vh">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext">2 / 4</div>
+        <img src="../views/donate02.jpg" style="width:100%" height="500vh">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext">3 / 4</div>
+        <img src="../views/donate03.jpg" style="width:100%" height="500vh">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext">4 / 4</div>
+        <img src="../views/donate05.jpg" style="width:100%" height="500vh">
+      </div>
+
+      <a class="prev" onclick="plusSlides(-1)">❮</a>
+      <a class="next" onclick="plusSlides(1)">❯</a>
+
+      <div class="caption-container">
+        <p id="caption"></p>
+      </div>
+
+
+    </div>
+
+    <script>
+      let slideIndex = 1;
+      showSlides(slideIndex);
+
+      function plusSlides(n) {
+        showSlides(slideIndex += n);
+      }
+
+      function currentSlide(n) {
+        showSlides(slideIndex = n);
+      }
+
+      function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("demo");
+        let captionText = document.getElementById("caption");
+        if (n > slides.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = slides.length }
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+        captionText.innerHTML = dots[slideIndex - 1].alt;
+      }
+    </script>
+
+  </body>
+  <div class="container mt-4">
+
+    <div class="jumbotron">
+      <h1 class="display-4">WELCOME TO BASS</h1>
+      <p class="lead">This is a complaint website .which recevice your complaint and take step to clear it with
+        two weeks </p>
+      <hr class="my-4">
+      <p>Use this website to clear your problems around you </p>
+
+    </div> 
+
+
+    <!-- ################################ REGISTER FORM ##################################-->
+
+    <h1 align="center">DONATE</h1>
+    <hr class="new">
+
+
+
+    <div class="section one" id="section1">
+      <h3>SUPPORT OUR CASE</h3>
+      <p>
+      <ul>
+        <li>Bringing drop-out children back to school</li>
+        <li>Providing smart phones and tablets to under-privileged children to ensure uninterrupted learning</li>
+        <li>Providing stationary,uniform and necessary support to under-privileged children</li>
+        <li>Ensuring mental well-being -Helpline services and one on one monitoring sessions for children to keep them
+          engaged</li>
+        <li>Regular counselling of parents to ensure the child's participation in school</li>
+        <li>Teacher training-to train them for the dynamic digital learning environment</li>
+      </ul>
+      </p><br>
+      <h3>LEARN FACTS</h3>
+      <p>
+      <ul>
+        <li>The Pandemic has put millions of people out of work,the domestic environment has suffered and children are
+          deeply affected.</li>
+        <li>Over 24 Million children*(UN Data) globally are at the risk of dropping out of school.</li>
+        <li>In India,5.3% of rural children aged 6-10 years did not enroll in school in 2020(ASER 2020).</li>
+        <li>Smart phone based learning through online engagement,accessibility to digital modes and internet
+          connectivity is a major challenge.</li>
+        <li>With frequent lockdowns,learning outcomes of children have been affected learning has a bearing on cognitive
+          development.</li>
+      </ul>
+      </p>
+    </div>
+
+    <div class="section two" id="section2">
+      <h1>SSA</h1>
+      <p>SSA full form is Sarva Shiksha Abhiyan. It is a flagship program for the Universalisation of Elementary
+        Education (UEE) formulated by the Government of India.
+        It is also one of the fundamental rights mandated by the 86th amendment of the Indian Constitution. SSA states
+        that the state shall endeavor free and compulsory education to the children of 6-14 years of age group.
+        People have the right to basic education. Basic education aids in improving the human level, especially
+        regarding infant mortality and life expectancy, which significantly contributes to the country’s economic
+        growth.
+        It leads to human capital formation, which may increase the production potential of our country. SSA aims to
+        provide useful and elementary education to bridge the social, regional, and gender gaps, along with active
+        participation of the community in school management.
+        It also inculcates value-based learning, or value-based learning objectives that provide the children with an
+        opportunity to permit selfish pursuits, and can work for each other’s well-being. SSA helps children develop
+        their spiritual and material potential by learning about their natural environment.
+        The function of SSA is to recognize the need for improving the performance of the school system by providing
+        quality elementary education in a mission mode.SSA is a universalization of primary education for anyone within
+        a particular time. It is an attempt to improve human capabilities through community provision.
+        This also lays a special construct on making education useful and relevant at the elementary level by improving
+        the curriculum. The teachers’ role is critical within SSA, to advocate and focus on the students’ developmental
+        needs.
+
+      </p>
+
+
+
+      <div class="section four" id="section4">
+        <h1>PENCIL</h1>
+        <p>PENCIL stands for Platform for Effective Enforcement for No Child Labour. It is an efficient enforcement
+          mechanism contributing towards the ultimate goal of a “child labour free society”.
+          It facilitates the uploading and sharing of awareness generation activities. National Informatics Centre (NIC)
+          designed, developed and hosts the PENCIL portal.
+          It can be accessed at PENCIL PORTAL 
+
+        </p>
+      </div>
+      <script>
+        function openNav() {
+          document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";
+        }
+      </script>
+
+      <!-- JavaScript Bundle with Popper -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
